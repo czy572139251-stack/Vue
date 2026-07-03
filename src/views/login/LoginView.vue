@@ -18,7 +18,8 @@ function handleLogin() {
   loading.value = true
   setTimeout(() => {
     userStore.setToken("mock_token_" + Date.now())
-    userStore.setUserInfo({
+    userStore.applyRole(loginForm.value.username === "admin" ? "admin" : "user")
+      userStore.setUserInfo({
       id: 1,
       username: loginForm.value.username,
       nickname: "管理员",

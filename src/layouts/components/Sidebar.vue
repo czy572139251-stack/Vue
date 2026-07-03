@@ -1,4 +1,18 @@
 <script setup lang="ts">
+import { computed } from "vue"
+import { useUserStore } from "@/stores/user"
+
+const userStore = useUserStore()
+
+const permMap: Record<string, string> = {
+  Welcome: "", Dashboard: "dashboard", Profile: "profile",
+  VueFlow: "vue-flow", Order: "order", User: "user",
+  Role: "role", Log: "log", Settings: "settings",
+}
+
+const visibleMenu = computed(() =>
+  appStore.menuList.filter(m => { const p = permMap[m.name]; return !p || userStore.hasPermission(p) })
+)
 import { useRouter, useRoute } from "vue-router"
 import { useAppStore } from "@/stores/app"
 import { Document } from "@element-plus/icons-vue"
@@ -26,7 +40,7 @@ function handleMenuSelect(index: string) {
       background-color="transparent"
       @select="handleMenuSelect"
     >
-      <template v-for="item in appStore.menuList" :key="item.path">
+      <template v-for="item in visibleMenu" :key="item.path">
         <el-menu-item :index="item.path">
           <el-icon>
             <component :is="item.icon" />

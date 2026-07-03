@@ -5,6 +5,7 @@ import * as ElementPlusIconsVue from "@element-plus/icons-vue"
 import "element-plus/dist/index.css"
 import "element-plus/theme-chalk/dark/css-vars.css"
 
+import { permission } from "./directives/permission"
 import App from "./App.vue"
 import router from "./router"
 
