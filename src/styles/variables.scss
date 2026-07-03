@@ -1,0 +1,112 @@
+// ===========================================
+// 设计 Token — 项目全局设计变量
+// 所有颜色、字号、间距、圆角都必须从这里取
+// 不允许在组件中硬编码样式值
+// ===========================================
+
+@use "sass:color";
+
+// ---- 颜色系统 ----
+// 主色
+$color-primary: #409eff;
+$color-primary-light-1: color.mix(white, $color-primary, 20%);
+$color-primary-light-2: color.mix(white, $color-primary, 40%);
+$color-primary-dark-1: color.mix(black, $color-primary, 10%);
+
+$color-success: #67c23a;
+$color-warning: #e6a23c;
+$color-danger: #f56c6c;
+$color-info: #909399;
+
+$color-text-primary: #303133;
+$color-text-regular: #606266;
+$color-text-secondary: #909399;
+$color-text-placeholder: #c0c4cc;
+
+$color-border-base: #dcdfe6;
+$color-border-light: #e4e7ed;
+$color-border-lighter: #ebeef5;
+$color-border-extra-light: #f2f6fc;
+
+$color-bg-base: #f5f7fa;
+$color-bg-white: #ffffff;
+$color-bg-dark: #1d1e1f;
+
+// ---- 字号系统 ----
+$font-size-extra-large: 20px;
+$font-size-large: 18px;
+$font-size-medium: 16px;
+$font-size-base: 14px;
+$font-size-small: 13px;
+$font-size-extra-small: 12px;
+
+$font-weight-bold: 600;
+$font-weight-medium: 500;
+$font-weight-regular: 400;
+
+$line-height-base: 1.6;
+$line-height-heading: 1.4;
+$line-height-compact: 1.2;
+
+// ---- 间距系统 ----
+$spacing-none: 0;
+$spacing-xxs: 4px;
+$spacing-xs: 8px;
+$spacing-sm: 12px;
+$spacing-base: 16px;
+$spacing-md: 20px;
+$spacing-lg: 24px;
+$spacing-xl: 32px;
+$spacing-xxl: 40px;
+$spacing-xxxl: 48px;
+
+// ---- 圆角 ----
+$border-radius-none: 0;
+$border-radius-small: 4px;
+$border-radius-base: 6px;
+$border-radius-medium: 8px;
+$border-radius-large: 12px;
+$border-radius-round: 20px;
+$border-radius-circle: 50%;
+
+// ---- 阴影 ----
+$shadow-none: none;
+$shadow-small: 0 1px 3px rgba(0, 0, 0, 0.06);
+$shadow-base: 0 2px 8px rgba(0, 0, 0, 0.08);
+$shadow-medium: 0 4px 16px rgba(0, 0, 0, 0.1);
+$shadow-large: 0 8px 24px rgba(0, 0, 0, 0.12);
+
+// ---- 布局 ----
+$sidebar-width: 220px;
+$sidebar-collapsed-width: 64px;
+$navbar-height: 56px;
+$tagsview-height: 40px;
+
+$transition-duration-fast: 0.15s;
+$transition-duration-base: 0.25s;
+$transition-duration-slow: 0.4s;
+$transition-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+$breakpoint-xs: 480px;
+$breakpoint-sm: 768px;
+$breakpoint-md: 1024px;
+$breakpoint-lg: 1280px;
+$breakpoint-xl: 1440px;
+
+// ---- CSS 变量（用于 JS 动态读取） ----
+:root {
+  --color-primary: #{$color-primary};
+  --color-primary-light-1: #{$color-primary-light-1};
+  --color-primary-light-2: #{$color-primary-light-2};
+  --color-primary-dark-1: #{$color-primary-dark-1};
+  --color-success: #{$color-success};
+  --color-warning: #{$color-warning};
+  --color-danger: #{$color-danger};
+  --color-info: #{$color-info};
+  --color-text-primary: #{$color-text-primary};
+  --color-text-regular: #{$color-text-regular};
+  --color-text-secondary: #{$color-text-secondary};
+  --color-bg-base: #{$color-bg-base};
+  --sidebar-width: #{$sidebar-width};
+  --navbar-height: #{$navbar-height};
+}

@@ -1,0 +1,79 @@
+@use "./variables.scss" as *;
+@use "./theme.scss";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+    "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial,
+    sans-serif;
+  color: $color-text-primary;
+  background-color: $color-bg-base;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: $color-primary;
+  text-decoration: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+.page-container {
+  padding: $spacing-lg;
+
+  .page-header {
+    margin-bottom: $spacing-lg;
+
+    h2 {
+      font-size: $font-size-large;
+      font-weight: $font-weight-bold;
+      color: $color-text-primary;
+    }
+
+    p {
+      margin-top: $spacing-xs;
+      font-size: $font-size-base;
+      color: $color-text-secondary;
+    }
+  }
+}
+
+.page-card {
+  background: $color-bg-white;
+  border-radius: $border-radius-medium;
+  box-shadow: $shadow-small;
+  padding: $spacing-lg;
+}
+
+.table-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: $spacing-base;
+  flex-wrap: wrap;
+  gap: $spacing-sm;
+}
+
+.search-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-sm;
+  margin-bottom: $spacing-base;
+  align-items: flex-end;
+}
