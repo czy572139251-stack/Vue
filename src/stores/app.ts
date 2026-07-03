@@ -6,6 +6,10 @@ export const useAppStore = defineStore("app", () => {
   const sidebarCollapsed = ref(false)
   const breadcrumbs = ref<string[]>([])
   const darkMode = ref(localStorage.getItem("darkMode") === "true")
+  const visitedViews = ref<string[]>(["Welcome"])
+
+  function addVisitedView(name: string) { if (!visitedViews.value.includes(name)) visitedViews.value.push(name) }
+  function removeVisitedView(name: string) { const idx = visitedViews.value.indexOf(name); if (idx > -1) visitedViews.value.splice(idx, 1) }
 
   function toggleDarkMode() {
     darkMode.value = !darkMode.value
@@ -27,5 +31,5 @@ export const useAppStore = defineStore("app", () => {
 
   function toggleSidebar() { sidebarCollapsed.value = !sidebarCollapsed.value }
   function setBreadcrumbs(paths: string[]) { breadcrumbs.value = paths }
-  return { sidebarCollapsed, breadcrumbs, darkMode, menuList, toggleSidebar, setBreadcrumbs, toggleDarkMode }
+  return { sidebarCollapsed, breadcrumbs, darkMode, menuList, visitedViews, toggleSidebar, setBreadcrumbs, toggleDarkMode, addVisitedView, removeVisitedView }
 })
